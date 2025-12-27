@@ -1,0 +1,9 @@
+{
+	"name": "azurelearningv1",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "04f3a65b-8c75-415e-8308-3487bc2f1fa0",
+		"tenantId": "017268fa-1ded-4255-85b3-c87e0cba0acb"
+	}
+}
