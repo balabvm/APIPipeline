@@ -1,0 +1,20 @@
+{
+	"name": "ouput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datastorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "api_posts.json",
+				"folderPath": "social_media",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {}
+	}
+}
