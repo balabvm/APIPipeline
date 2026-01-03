@@ -1,6 +1,45 @@
 {
 	"name": "blobtoblob",
 	"properties": {
+		"activities": [
+			{
+				"name": "blob to blob",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"enableStaging": false
+				}
+			}
+		],
+		"parameters": {
+			"p_inputContainer": {
+				"type": "string",
+				"defaultValue": "input"
+			},
+			"p_outputContainer": {
+				"type": "string",
+				"defaultValue": "output"
+			},
+			"p_fileName": {
+				"type": "string",
+				"defaultValue": "sample_api_data.csv"
+			},
+			"p_folder": {
+				"type": "string",
+				"defaultValue": "bronze"
+			},
+			"p_runDate": {
+				"type": "string",
+				"defaultValue": "@utcNow()"
+			}
+		},
 		"annotations": []
 	}
 }
