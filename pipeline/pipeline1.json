@@ -20,14 +20,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"modifiedDatetimeStart": {
-								"value": "@pipeline().parameters.p_runDate",
-								"type": "Expression"
-							},
-							"modifiedDatetimeEnd": {
-								"value": "@pipeline().parameters.p_runDate",
-								"type": "Expression"
-							},
+							"wildcardFileName": "*.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -137,10 +130,6 @@
 							"container": {
 								"value": "@pipeline().parameters.p_inputContainer",
 								"type": "Expression"
-							},
-							"fileName": {
-								"value": "@pipeline().parameters.p_fileName",
-								"type": "Expression"
 							}
 						}
 					}
@@ -152,10 +141,6 @@
 						"parameters": {
 							"container": {
 								"value": "@pipeline().parameters.p_outputContainer",
-								"type": "Expression"
-							},
-							"fileName": {
-								"value": "@pipeline().parameters.p_fileName",
 								"type": "Expression"
 							}
 						}
@@ -171,10 +156,6 @@
 			"p_outputContainer": {
 				"type": "string",
 				"defaultValue": "output"
-			},
-			"p_fileName": {
-				"type": "string",
-				"defaultValue": "sample_api_data.csv"
 			},
 			"p_folder": {
 				"type": "string",
