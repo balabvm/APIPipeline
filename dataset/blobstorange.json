@@ -6,13 +6,10 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"P_input": {
+			"p_input": {
 				"type": "string"
 			},
-			"P_output": {
-				"type": "string"
-			},
-			"Filename": {
+			"filename": {
 				"type": "string"
 			}
 		},
