@@ -1,5 +1,5 @@
 {
-	"name": "blobtoblob",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
@@ -19,13 +19,40 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
+							"modifiedDatetimeStart": {
+								"value": "@pipeline().parameters.p_runDate",
+								"type": "Expression"
+							},
+							"modifiedDatetimeEnd": {
+								"value": "@pipeline().parameters.p_runDate",
+								"type": "Expression"
+							},
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -34,6 +61,22 @@
 						"parameters": {
 							"container": {
 								"value": "@pipeline().parameters.p_inputContainer",
+								"type": "Expression"
+							},
+							"fileName": {
+								"value": "@pipeline().parameters.p_fileName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "blobsource",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@pipeline().parameters.p_outputContainer",
 								"type": "Expression"
 							},
 							"fileName": {
