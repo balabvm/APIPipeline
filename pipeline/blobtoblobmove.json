@@ -38,12 +38,8 @@
 						"referenceName": "blobstorange",
 						"type": "DatasetReference",
 						"parameters": {
-							"p_input": {
-								"value": "@pipeline().parameters.P_Input",
-								"type": "Expression"
-							},
-							"filename": {
-								"value": "@pipeline().parameters.FileName",
+							"input": {
+								"value": "@pipeline().parameters.p_Input",
 								"type": "Expression"
 							}
 						}
@@ -52,13 +48,13 @@
 			}
 		],
 		"parameters": {
-			"p_Input": {
+			"input": {
 				"type": "string"
 			},
 			"fileName": {
 				"type": "string"
 			},
-			"p_output": {
+			"output": {
 				"type": "string"
 			}
 		},
