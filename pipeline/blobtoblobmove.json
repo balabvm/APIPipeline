@@ -21,7 +21,7 @@
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"wildcardFolderPath": {
-								"value": "@pipeline().parameters.P_Input",
+								"value": "@pipeline().parameters.input",
 								"type": "Expression"
 							},
 							"wildcardFileName": "*csv",
@@ -39,7 +39,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"input": {
-								"value": "@pipeline().parameters.p_Input",
+								"value": "@pipeline().parameters.input",
 								"type": "Expression"
 							}
 						}
