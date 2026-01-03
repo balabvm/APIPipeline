@@ -35,7 +35,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
@@ -142,6 +142,10 @@
 							"container": {
 								"value": "@pipeline().parameters.p_outputContainer",
 								"type": "Expression"
+							},
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
 							}
 						}
 					}
@@ -157,9 +161,8 @@
 				"type": "string",
 				"defaultValue": "output"
 			},
-			"p_folder": {
-				"type": "string",
-				"defaultValue": "bronze"
+			"fileName": {
+				"type": "string"
 			}
 		},
 		"annotations": []
