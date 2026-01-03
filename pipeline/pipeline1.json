@@ -179,10 +179,6 @@
 			"p_folder": {
 				"type": "string",
 				"defaultValue": "bronze"
-			},
-			"p_runDate": {
-				"type": "string",
-				"defaultValue": "@utcNow()"
 			}
 		},
 		"annotations": []
