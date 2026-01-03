@@ -1,0 +1,36 @@
+{
+	"name": "blobstorange",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBloblinkservice",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"P_input": {
+				"type": "string"
+			},
+			"P_output": {
+				"type": "string"
+			},
+			"Filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": {
+					"value": "@dataset().P_input",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
