@@ -1,0 +1,9 @@
+{
+	"name": "bala-adf-rcm",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c225914b-acf5-45f7-b16a-fed65de6eeac",
+		"tenantId": "017268fa-1ded-4255-85b3-c87e0cba0acb"
+	}
+}
