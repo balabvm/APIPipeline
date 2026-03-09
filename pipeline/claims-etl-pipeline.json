@@ -1,0 +1,6 @@
+{
+	"name": "claims-etl-pipeline",
+	"properties": {
+		"annotations": []
+	}
+}
