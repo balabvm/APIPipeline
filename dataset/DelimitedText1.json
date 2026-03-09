@@ -1,0 +1,49 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Claims.csv",
+				"folderPath": "claims",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Claim_ID",
+				"type": "String"
+			},
+			{
+				"name": "Patient_ID",
+				"type": "String"
+			},
+			{
+				"name": "Provider_ID",
+				"type": "String"
+			},
+			{
+				"name": "Claim_Amount",
+				"type": "String"
+			},
+			{
+				"name": "Claim_Date",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			}
+		]
+	}
+}
