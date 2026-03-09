@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Claims.csv",
-				"folderPath": "claims",
+				"folderPath": "processed/Claims",
 				"container": "raw"
 			},
 			"columnDelimiter": ",",
